@@ -1,0 +1,37 @@
+
+
+
+.cajita{
+    height:100px;
+    border-style: solid;
+    border-color: blue;
+};
+
+.red{
+  border-style: solid;
+  border-color: green;
+}
+.cabecera{
+  height:200px;
+  border-style: solid;
+  border-color: green;
+  font: oblique 120% sans-serif bold; 
+}
+
+.cont{
+  height:700px;
+  border-style: solid;
+  border-color: green;
+  font: oblique 120% sans-serif bold; 
+}
+.ed{
+  height:auto;
+  border-style: solid;
+  border-color: red;
+}
+.mini{
+  height:100px;
+  border-style: solid;
+  border-color: gray;
+}
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title> Traductor de textos </title>
+  <link rel="StyleSheet" href="css/estilo.css" type="text/css" media="screen">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css">
+  <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Traductor de textos mediante el uso de la cámara del móvil en tiempo real">
+  <meta name="keywords" content="Movil,traductor,tiempo-real,idiomas,español-ingles,ingles-español,Android,IOS">
+
+  <script type="text/javascript" src="js/form.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="js/angularJS.js"></script>
+</head>
+<body ng-app="todoApp">
+  <center>
+  <div class="col-md-12">
+     <header>
+       <h1> TRADUCTOR EN TIEMPO REAL </h1>
+     </header>
+  </div>
+   <div class="col-md-12">
+     <nav>
+       <ul>
+         <li><a href="#Text" data-toggle="tab" >INICIO</a></li>
+         <li><a href="#LearnMore" data-toggle="tab" >SABER MÁS</a></li>
+         <li><a href="#Access" data-toggle="tab" >ACCESO</a></li>
+         <li><a href="#Result" data-toggle="tab" >Resultado</a></li>
+       </ul>
+     </nav>
+
+   </div>
+  <div class="row">
+     <div id class="col-md-12">
+     <div id ="content" ng-controller="TodoListController as todoList">
+      <div class="tab-content">
+      <div class="tab-pane fade in active" id ="Text"  class="col-md-8">
+         <div id="Introduccion">
+           <div id="Txt">
+             <p>Este proyecto se basa en un traductor de texto en tiempo real, es decir, mediante la cámara de tu móvil
+             enfocarás hacia un texto en algún idioma (en principio en inglés) y te lo traducirá en tiempo real a español, y viceversa.</p>
+             <p>A diferencia de otras herramientas ya existentes, este traductor te traduce el texto en 100% tiempo real, en cambio, otros en el
+             mercado, requieren de previamente realizar una captura (foto) del texto a traducir, siendo esto menos cómodo y más tedioso.</p>
+             <p>A parte de las funcionalidades indicadas a continuación, podrás decirnos si te gustaría que el proyecto tuviera alguna otra mediante el
+             formulario de la derecha. Pronto habrán nuevas novedades!</p>
+           </div>
+           <div id="img2"><img src="images/First.jpg" width="250" height="290"></p></div>
+         </div>
+         <div id="Especificaciones">
+          <div id="img3"><img src="images/Second.jpg" width="350" height="240"></p></div>
+          <div id="Txt2">
+            <p><h3>Funcionalidades y características:</h3></p>
+            <ul>
+               <li>Traducción inglés-español</li>
+               <li>Traducción en tiempo real</li>
+               <li>Ahorro batería</li>
+               <li>Permite guardar los textos</li>
+               <li>Interfaz sencilla y ágil</li>
+               <li>Disponible IOS y Android</li>
+               <li>Soporte al usuario inmediato</li>
+            </ul>
+          </div>
+         </div>
+       </div>
+       <div class="tab-pane fade" id ="LearnMore">
+         <div id="Introduccion">
+           <div id="Txt">
+           <p> SABER MAS? </p>
+           </div>
+         </div>
+       </div>
+
+       <div class="tab-pane fade" id ="Access">
+         <div id="Introduccion">
+           <div id="Txt">
+           <p> ACCESO </p>
+           </div>
+         </div>
+       </div>
+       <div class="tab-pane fade" id ="Result">
+         <div id="Introduccion">
+           <div id="Txt">
+             <h4>Resultado</h4>
+          		 <li ng-repeat="todo in todoList.todos">
+          		 <ng-model="todo.done">
+          		<p> Nombre <span class="done-{{todo.done}}">{{todo.text}}</span></p>
+          		<p> Correo <span class="done-{{todo.done}}">{{todo.text2}}</span></p>
+          		 </li>
+           </div>
+         </div>
+       </div>
+        <div id ="form" class="col-md-4">
+         <h3>Colaborar!</h3>
+           <form onsubmit="return validate();" name="formCheck" ng-submit="todoList.addTodo()">
+            <div class="form-group">
+              <p><label>Nombre:</label> <input type="text" name="name" ng-model="todoList.nombre"></p>
+            </div>
+            <div class="form-group">
+             <p><label>Email:</label> <input type="text" name="email" ng-model="todoList.email"></p>
+           </div>
+          <div class="radio">
+             <p><b>Funcionalidades:</b></p>
+             <ul>
+               <li>Multidioma<input type="radio" name="TM"></li>
+               <li>Modo Nocturno<input type="radio" name="MN"></li>
+               <li>Textos Favoritos<input type="radio" name="TF"></li>
+               <li>Narración de textos<input type="radio" name="NT"></li>
+             </ul>
+          </div>
+          <div class="form-group">
+             <p><label>Otra:</label> <input type ="text" name="MoreF"></p>
+            <input type="submit" value="Enviar">
+          </div>
+           </form>
+       </div>
+      </div>
+     </div>
+  </div>
+</div>
+   <footer></footer>
+ </center>
+</body>
+</html>
